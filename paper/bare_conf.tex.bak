@@ -296,14 +296,14 @@ all genes, or in a gene specific manner. This choice introduces
 complications for the analysis. Using a gene specific silent
 probability is problematic when the observed silent counts are small
 or missing, leading to an underestimate the silent probability and an
-overestimate of a gene's nonsynonymous mutation burden. Using a genome
-wide uniform silent probability by combining silent mutations across
-genes has issues because it does not account for biological
-differences in genes that affect mutation load. Past gene mutation
-burden analyses considered both estimates of silent mutation
-probability in separate pipelines, and presented both results. Here we
-offer a way to choose between local gene and global silent
-probabilities. We suggest that genes with more silent mutations
+overestimate of a the signifcance of a gene's nonsynonymous mutation
+burden. Using a genome wide uniform silent probability by combining
+silent mutations across genes has issues because it does not account
+for biological differences in genes that affect mutation load. Past
+gene mutation burden analyses considered both estimates of silent
+mutation probability in separate pipelines, and presented both
+results. Here we offer a way to choose between local gene and global
+silent probabilities. We suggest that genes with more silent mutations
 expected by chance be assigned the gene specific silent probability,
 while all other genes be assigned the global silent probability. We
 demonstrate the effectiveness of this approach in two cancers,
@@ -339,7 +339,7 @@ Our approach, inspired by a survey of gene enrichment methods using
 lung adenocarcinoma \cite{ding2008somatic}, requires three
 steps. First, we estimate the expected ratio of nonsynonymous to
 silent changes for each gene and the capture region. Second, we
-determine outlier genes that have more silent mutations than expected
+determing outlier genes that have more silent mutations than expected
 from the silent mutation rate observed across the capture
 region. Third we find the probability of nonsynonymous mutations per
 gene given the capture wide silent mutation rate for non-outlier
@@ -347,12 +347,12 @@ genes, or local silent mutation rate for a gene for outlier genes.
 
 \subsubsection{Simulation}
 We focus on mutations in sun exposed cutaneous melanoma tumors because
-other types are believe to have different properties \cite{}. As our
+other types are believe to have different properites \cite{}. As our
 capture region, we use . In our somatic SNV pipeline, we search for
 novel SNVs by ignoring variants catalogued in normal samples or
 variant databases like dbSNPv135 \cite{sherry2001dbsnp} and 1000
 Genomes \cite{siva20081000}. In the capture region simulation, we also
-discard nucleotides with catalogued variants. For melanoma, we classify
+discard nucleotides with cataogued variants. For melanoma, we classify
 nucleodites into three contexts: thymidine, cytosine at a
 dipyrimidine, and other cytosines. We choose this classification
 because UV radiation accounts for most mutations in cutaneous
@@ -362,16 +362,16 @@ melanoma, and occurs mostly at dipyrimidine cytosines
 For the simulation, we combined somatic nonsynonymous and silent
 mutations into one set, and determined At each sequence context, we
 determined the distributions of mutations. To avoid mutation biases
-associated with driver genes, which have mutations affected by
+assocoated with driver genes, which have mutations affected by
 selection, we ignored mutations in genes that fell in the top 100
 genes with somatic nonsynonymous mutations. For each of the three
 sequence contexts, we determined the distribution of mutations. We
 sampled from this distribution as we simulated a mutation at each base
 in the capture region, and recorded simulated silent and nonsynonymous
 counts for each gene and context. At the end of the simulation, we
-have an expected ratio of nonsynonymous to silent mutations for each
+have an exepcted ratio of nonsynonymous to silent mutations for each
 gene sequence context combination. This expected ratio is used to
-calculate the number of nonsynonymous mutations a gene will have by
+calculate the number of nonsynomymous mutations a gene will have by
 chance given its silent mutation count.
 
 \subsubsection{Outlier Genes}
