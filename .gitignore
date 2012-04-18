@@ -3,3 +3,8 @@ working/*
 *.pyc
 data/*
 tmp/*
+paper/*.pdf
+paper/*.log
+paper/*.blg
+paper/*.bbl
+paper/*.aux
